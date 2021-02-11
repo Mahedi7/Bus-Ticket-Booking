@@ -1,0 +1,48 @@
+{% load static from staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'sidebar.css'%}">
+<link href="{% static 'logincss.css'%}" rel="stylesheet" type = "text/css">
+<body>
+
+
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+  <a href="home" class="w3-bar-item w3-button">Home</a>
+  <a href="signup" class="w3-bar-item w3-button">Sign up</a>
+  <a href="contact" class="w3-bar-item w3-button">Contact </a>
+  <a href="about" class="w3-bar-item w3-button">About</a>
+</div>
+
+<div class="w3-main" style="margin-left:200px">
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>Bus Ticket Booking</h1>
+  </div>
+</div>
+<style>
+#example1 {
+  border: 10px solid black;
+  padding: 35px;
+  background-color: green;
+  background-repeat: no-repeat;
+}
+</style>
+
+<p>Disgned & Developed by: </p>
+<div id="example1">
+  <h1 align="center"> Mahedi Hassan Shuvo</h1>
+    <p align="center"> University of Asia Pacific</p>
+    <p align="center"> Department of CSE</p>
+    <p align="center"> Email: 17101053@uap-bd.edu</p>
+    <p align="center"> Reference: w3schools.com</p>
+  <p></p>
+</div>
+</body>
+</html>

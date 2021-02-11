@@ -1,0 +1,73 @@
+{% load static from staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'sidebar.css'%}">
+<link href="{% static 'logincss.css'%}" rel="stylesheet" type = "text/css">
+<body>
+
+
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+  <a href="home" class="w3-bar-item w3-button">Home</a>
+  <a href="signup" class="w3-bar-item w3-button">Sign up</a>
+  <a href="contact" class="w3-bar-item w3-button">Contact </a>
+  <a href="about" class="w3-bar-item w3-button">About</a>
+</div>
+
+<div class="w3-main" style="margin-left:200px">
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>Bus Ticket Booking</h1>
+  </div>
+</div>
+<head>
+<style>
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #3CBC8D;
+  color: white;
+}
+</style>
+</head>
+    <body>
+
+<p>Available Buses:</p>
+
+<form method="POST" action = "seat">
+    {% csrf_token %}
+  <label for="busreg">Bus Registration No.:</label>
+  <input type="text" id="busreg" name="Bus_Reg" value="Dh-1001">
+  <label for="busname">Bus Name:</label>
+  <input type="text" id="busname" name="Bus_Name" value="Hanif Enterprise">
+    <label for="From">From:</label>
+  <input type="text" id="From" name="From" value="Dhaka">
+    <label for="to">To:</label>
+  <input type="text" id="to" name="To" value="Chittagong">
+    <label for="deptime">Departure Time:</label>
+  <input type="text" id="deptime" name="Dep_Time" value="08:00 am">
+    <label for="bustype">Bus Type:</label>
+  <input type="text" id="bustype" name="Bus_Type" value="Non-AC">
+    <label for="busclass">Bus Class:</label>
+  <input type="text" id="busclass" name="Bus_Class" value="Economy">
+    <label for="fare">Fare:</label>
+  <input type="text" id="fare" name="Fare" value="480">
+    <label for="totalseat">Total Seat:</label>
+  <input type="text" id="totalseat" name="Total_Seat" value="36">
+    <br><br>
+    <input type="submit" value="Go!">
+</form>
+
+
+</body>
+</html>

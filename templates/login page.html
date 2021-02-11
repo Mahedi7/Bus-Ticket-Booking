@@ -1,0 +1,102 @@
+{% load static from staticfiles %}
+<html>
+<head>
+<title>login</title>
+  <div class="my">
+    <body background="{% static 'bgimage.jpg'%}">
+<style>.img {
+  opacity: 0.25;
+  filter: alpha(opacity=50);
+}</style>
+  </div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'sidebar.css'%}">
+<link href="{% static 'login.css'%}" rel="stylesheet" type = "text/css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+  <a href="home" class="w3-bar-item w3-button">Home</a>
+  <a href="signup" class="w3-bar-item w3-button">Sign up</a>
+  <a href="contact" class="w3-bar-item w3-button">Contact </a>
+  <a href="about" class="w3-bar-item w3-button">About</a>
+</div>
+
+<div class="w3-main" style="margin-left:200px">
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>Bus Ticket Booking</h1>
+  </div>
+</div>
+  <link href ="{% static 'firstlogin.css'%}" rel="stylesheet" type="text/css">
+<form action = "action_page.php"></form>
+  <div class="imgcontainer">
+    <img src="{% static 'avatar.jpg'%}" alt="Avatar" class="avatar">
+    <h1>If you don't have an account, please sign up first!</h1>
+  </div>
+
+<div class="button">
+  <style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+  <form method="POST" action = "login">
+            {% csrf_token %}
+  <a href="signup" class="w3-bar-item w3-button">Sign Up<span></span></a>
+    </div>
+  {% for message in messages %}
+    <h1>{{ message }}</h1>
+    {% endfor %}
+  <div class="container">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+
+</div>
+</form>
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+
+
+
+
+
+</head>
+
+
+
+
+</body>
+</html>

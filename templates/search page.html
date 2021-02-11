@@ -1,0 +1,78 @@
+{% load static from staticfiles %}
+<html>
+<title>bus ticket</title>
+<div class="my">
+    <body background="{% static 'bgimage.jpg'%}">
+<style>.img {
+  opacity: 0.25;
+  filter: alpha(opacity=50);
+}</style>
+  </div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'sidebar.css'%}">
+<link href="{% static 'login.css'%}" rel="stylesheet" type = "text/css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+  <a href="home" class="w3-bar-item w3-button">Home</a>
+  <a href="signup" class="w3-bar-item w3-button">Sign up</a>
+  <a href="contact" class="w3-bar-item w3-button">Contact </a>
+  <a href="about" class="w3-bar-item w3-button">About</a>
+</div>
+
+<div class="w3-main" style="margin-left:200px">
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>Bus Ticket Booking</h1>
+  </div>
+</div>
+
+<div class="w3-container">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Ticket Booking</title>
+    <h1>Journey Details</h1>
+    <img src="{% static 'bus.jpg'%}" alt="" width="854" height="480">
+
+<div>
+    <form method="POST" action = "bus">
+            {% csrf_token %}
+        <br><br>
+<label for="From">From:</label>
+  <input type="text" id="From" name="From">
+  <label for="to">To:</label>
+  <input type="text" id="to" name="To">
+        <label for="bustype">Bus Type(AC/ Non-AC):</label>
+  <input type="text" id="bustype" name="Bus_Type">
+        <br> <br>
+        <input type="submit", value="Submit">
+
+
+</form>
+</div>
+</head>
+<body>
+
+</body>
+</html>
+
+</div>
+
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
